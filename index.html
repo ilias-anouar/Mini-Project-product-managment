@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>produits cosmétiques</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>produits cosmétiques</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
 
 <body>
     <form>
@@ -22,7 +22,7 @@
         <input type="text" id="price"><br>
         <p id="invprice">invalide price</p>
         <label for="production date">production date</label><br>
-        <input type="date" id="production_date"><br>
+        <input type="text" id="production_date" placeholder="jj/dd/aaaa"><br>
         <p id="invdate">invalide date</p>
         <label for="type">type</label><br>
         <select name="type" id="type">
@@ -34,7 +34,7 @@
             <option value="entretien capillaires">entretien capillaires</option>
             <option value="parfums">parfums</option>
         </select>
-        <fieldset>
+        <fieldset id="discount">
             <legend>on discount</legend>
             <div>
                 <label for="yes"><input value="yes" type="radio" name="discount" id="yes">yes</label>
