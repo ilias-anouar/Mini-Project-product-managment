@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 0.2s;
+}
+body{
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "form section";
+}
+/* ========form======== */
+form{
+    padding: 1em;
+    grid-area: form;
+    font-size: large;
+}
+form input[type=text]{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    outline: none;
+    background: transparent;
+}
+form input[type=date]{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    outline: none;
+    background: transparent;
+}
+form select{
+    width: 100%;
+    height: 2em;
+    font-size: large;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    outline: none;
+    background: transparent;
+}
+form button{
+    padding: 1em 3em;
+    margin: 1em 0 0 0;
+}
+/* ========section====== */
+section{
+    padding: 1em;
+    grid-area: section;
+}
+/* ========table======= */
+table{
+    width: 100%;
+}
+table, tr, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+tr th{
+    padding: 1em 1em;
+}
