@@ -6,19 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>produits cosmétiques</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <form>
         <h2>Add a product</h2>
         <label for="name">name</label><br>
-        <input type="text"><br>
+        <input id="name" type="text"><br>
+        <p id="invname">invalide name</p>
         <label for="brand">brand</label><br>
         <input type="text" id="brand"><br>
+        <p id="invbrand">invalide brand</p>
         <label for="price">price</label><br>
         <input type="text" id="price"><br>
+        <p id="invprice">invalide price</p>
         <label for="production date">production date</label><br>
         <input type="date" id="production_date"><br>
+        <p id="invdate">invalide date</p>
         <label for="type">type</label><br>
         <select name="type" id="type">
             <option value="hygiène et toilette">hygiène et toilette</option>
@@ -38,18 +43,20 @@
                 <label for="no"><input value="no" type="radio" name="discount" id="no">no</label>
             </div>
         </fieldset>
-        <button type="button">Add</button>
+        <p id="invdis">select one</p>
+        <button id="button" type="button">Add</button>
     </form>
     <section>
         <h2>Your product</h2>
         <table>
             <tr>
-                <th>name</th>
-                <th>brand</th>
-                <th>price</th>
-                <th>production date</th>
-                <th>type</th>
-                <th>on discount</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Production date</th>
+                <th>Type</th>
+                <th>On discount</th>
+                <th>Action</th>
             </tr>
         </table>
     </section>

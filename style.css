@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
     scroll-behavior: smooth;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 body{
     margin: 0;
@@ -10,10 +10,21 @@ body{
     grid-template-rows: auto;
     grid-template-areas: "form section";
 }
+/* =====erore========= */
+.erore{
+    display: block;
+    color: red;
+}
 /* ========form======== */
 form{
     padding: 1em;
     grid-area: form;
+    font-size: large;
+}
+form p{
+    display: none;
+}
+form label{
     font-size: large;
 }
 form input[type=text]{
@@ -50,6 +61,18 @@ form select{
 form button{
     padding: 1em 3em;
     margin: 1em 0 0 0;
+    border: none;
+    color:white;
+    background-color: darkturquoise;
+}
+form button:hover{
+    background-color: turquoise;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+form input[type=radio]{
+    cursor: pointer;
 }
 /* ========section====== */
 section{
