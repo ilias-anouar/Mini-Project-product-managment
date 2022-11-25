@@ -1,3 +1,9 @@
+let named = document.getElementById('name').value
+let brand = document.getElementById('brand').value
+let price = document.getElementById('price').value
+let date = document.getElementById('production_date').value
+let select = document.getElementById('type').value
+let discount = document.getElementsByName('discount')
 // validation functions
 function checkName(name) {
 	let nameRex = /^(^[a-z]+['-\s]?[a-z]+)$/gi
@@ -25,11 +31,12 @@ function getpromo(listpromo) {
 function validation() {
 	// input value
 	let name = document.getElementById('name').value
-	let brand = document.getElementById('brand').value
-	let price = document.getElementById('price').value
-	let date = document.getElementById('production_date').value
-	let select = document.getElementById('type').value
-	let discount = document.getElementsByName('discount')
+let brand = document.getElementById('brand').value
+let price = document.getElementById('price').value
+let date = document.getElementById('production_date').value
+let select = document.getElementById('type').value
+let discount = document.getElementsByName('discount')
+
 	let table = [name, brand, price, date, select, getpromo(discount),`<button id="remove${cont}" onclick='remove(this);' class="remove">remove</button><button onclick='edit(this);' id="add${cont}" class="add">add</button>` ]
 	// validation
 	checkName(name)
@@ -112,11 +119,11 @@ document.getElementById('button').onclick = function () {
 	}
 }
 function resetform() {
-	let name = document.getElementById('name').value = ""
-    let brand = document.getElementById('brand').value = ""
-    let price = document.getElementById('price').value = ""
-    let date = document.getElementById('production_date').value = ""
-	let select = document.getElementById('type').value = ""
+	document.getElementById('name').value = ""
+    document.getElementById('brand').value = ""
+    document.getElementById('price').value = ""
+    document.getElementById('production_date').value = ""
+    document.getElementById('type').value = ""
 	let discount = document.getElementsByName('discount')
 	for (let i = 0; i < discount.length; i++) {
 		discount[i].checked = false		
@@ -138,12 +145,15 @@ function remove(that) {
 	that.closest('tr').remove()
 }
 // edit
+let upd = document.getElementById('save')
+let button = document.getElementById('button')
+let idtr
 function edit(that) {
-	let save = document.getElementById('save')
-	let button = document.getElementById('button')
+
 	// save.style.display = 'block'
 	// button.style.display = 'none'
 	let data = that.closest('tr')
+	idtr=data
 	let td = data.querySelectorAll('td')
 	let table = []
 	let inputtable =[] 
@@ -159,21 +169,32 @@ function edit(that) {
 	}else if(table[5] === "no"){
 		document.getElementById('no').checked = true
 	}
-	save.onclick = function(){
-		let inputdata = document.querySelectorAll('form input,select')
-		let inputtbl = []
-		inputdata.forEach(e=>inputtbl.push(e.value))
-		for (let i = 0; i < inputtbl.length-1; i++) {
-			td[i].innerHTML = inputtbl[i]
-		}
-		let discount =  document.getElementsByName('discount')
-		for (let i = 0; i < discount.length; i++) {
-			if (discount[i].checked = true) {
-				td[5].innerHTML = discount[i].value
-			}
-		}
-		// save.style.display = 'none'
-		// button.style.display = 'block'
-		resetform()
-	}
+}
+upd.onclick = function(){
+	console.log(idtr)
+	let discount =  document.getElementsByName('discount')
+	let td = idtr.querySelectorAll('td')
+	let table = [named, brand, price, date, select, getpromo(discount),`<button id="remove${cont}" onclick='remove(this);' class="remove">remove</button><button onclick='edit(this);' id="add${cont}" class="add">add</button>` ]
+	let inputtbl = []
+	table.forEach(e=>inputtbl.push(e))
+	console.log(inputtbl)
+	td[0].innerHTML = inputtbl[0]
+	td[1].innerHTML = inputtbl[1]
+	td[2].innerHTML = inputtbl[2]
+	td[3].innerHTML = inputtbl[3]
+	td[4].innerHTML = inputtbl[4]
+	td[5].innerHTML = inputtbl[5]
+
+
+
+	// for (let i = 0; i < inputtbl.length-2; i++) {
+	// 	console.log(inputtbl[i]);
+	// 	td[i].innerHTML = inputtbl[i]
+	// }
+
+	// td[5].innerHTML = getpromo(discount)
+	
+	// save.style.display = 'none'
+	// button.style.display = 'block'
+	resetform()
 }
