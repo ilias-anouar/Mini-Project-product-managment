@@ -85,7 +85,7 @@ function validation() {
 }
 // full valide
 function checkP() {
-	let p = document.querySelectorAll("#form p")
+	let p = document.querySelectorAll("form p")
 	let table = []
 	let result = true
 	p.forEach(e => {
@@ -101,7 +101,7 @@ function checkP() {
 function checktable() {
 	let result = true
 	for (let i = 0; i < validation().length; i++) {
-		if (validation()[i] == "") {
+		if (validation()[i] == "" || validation()[i] == undefined) {
 			return result = false
 		}
 	}
@@ -112,22 +112,19 @@ document.getElementById('button').onclick = function () {
 	cont++
 	validation();
 	checktable()
-	console.log(validation());
-	console.log(checktable());
 	checkP()
-	if (checkP() == true && checktable() == true) {
+	if (checkP() === true && checktable() === true) {
 		save()
-		// reseform()
+		resetform()
 	}
 }
-// function reseform() {
-// 	let name = document.getElementById('name').value = ""
-//     let brand = document.getElementById('brand').value = ""
-//     let price = document.getElementById('price').value = ""
-//     let date = document.getElementById('production_date').value = ""
-// 	let select = document.getElementById('type').value = ""
-//     let discount = document.getElementsByName('discount').checked = false
-// }
+function resetform() {
+	let name = document.getElementById('name').value = ""
+    let brand = document.getElementById('brand').value = ""
+    let price = document.getElementById('price').value = ""
+    let date = document.getElementById('production_date').value = ""
+	let select = document.getElementById('type').value = ""
+}
 function save() {
 	let tr = document.createElement('tr')
 	tr.setAttribute('id', 'tr' + cont)
@@ -145,11 +142,36 @@ function remove(that) {
 }
 // edit
 function edit(that) {
+	let save = document.getElementById('save')
+	let button = document.getElementById('button')
+	save.style.display = 'block'
+	button.style.display = 'none'
 	let data = that.closest('tr')
 	let td = data.querySelectorAll('td')
 	let table = []
+	let inputtable =[] 
 	td.forEach(e => table.push(e.innerHTML))
-	for (let i = 0; i < validation().length-2; i++) {
-		validation[i]=table[i]		
+	let input =  document.querySelectorAll('form input,select')
+	input.forEach(e=> inputtable.push(e))
+	for (let i = 0; i < table.length-1; i++) {
+		inputtable[i].value = table[i]
+	}
+	if (table[5] === "yes") {
+		document.getElementById('yes').checked = true
+	}else if(table[5] === "no"){
+		document.getElementById('no').checked = true
+	}
+	save.onclick = function(){
+		let inputdata = document.querySelectorAll('form input,select')
+		let inputtbl = []
+		inputdata.forEach(e=>inputtbl.push(e.value))
+		for (let i = 0; i < inputtbl.length-1; i++) {
+			td[i].innerHTML = inputtbl[i]
+		}
+		if (inputtbl[5] === "yes") {
+			td[5].innerHTML = "yes"
+		}else if(inputtbl[5] ==="no"){
+			td[5].innerHTML= "no"
+		}
 	}
 }

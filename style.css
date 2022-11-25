@@ -80,6 +80,10 @@ form input[type=radio]{
 form fieldset{
     margin-bottom: 1em;
 }
+#save{
+    display: none;
+    background-color: red;
+}
 /* ========section====== */
 section{
     padding: 2em;
