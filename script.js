@@ -117,6 +117,10 @@ function resetform() {
     let price = document.getElementById('price').value = ""
     let date = document.getElementById('production_date').value = ""
 	let select = document.getElementById('type').value = ""
+	let discount = document.getElementsByName('discount')
+	for (let i = 0; i < discount.length; i++) {
+		discount[i].checked = false		
+	}
 }
 function save() {
 	let tr = document.createElement('tr')
@@ -161,10 +165,13 @@ function edit(that) {
 		for (let i = 0; i < inputtbl.length-1; i++) {
 			td[i].innerHTML = inputtbl[i]
 		}
-		if (inputtbl[5] === "yes") {
-			td[5].innerHTML = "yes"
-		}else if(inputtbl[5] ==="no"){
-			td[5].innerHTML= "no"
+		let discount =  document.getElementsByName('discount')
+		for (let i = 0; i < discount.length; i++) {
+			if (discount[i].checked = true) {
+				console.log(discount[i].value);
+				td[5].innerHTML = discount[i].value
+			}
 		}
+		resetform()
 	}
 }
