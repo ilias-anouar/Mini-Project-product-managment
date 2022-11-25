@@ -7,9 +7,9 @@
 body{
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
-    grid-template-areas: "form section";
+    grid-template-areas: "form section section section";
 }
 /* =====erore========= */
 .erore{
@@ -81,8 +81,13 @@ form fieldset{
     margin-bottom: 1em;
 }
 #save{
-    /* display: none; */
+    display: none;
     background-color: red;
+    color: black;
+}
+#save:hover{
+    background-color: rgba(255, 0, 0, 0.769);
+    color: white;
 }
 /* ========section====== */
 section{
@@ -96,6 +101,10 @@ table{
     text-align: center;
     background-color: antiquewhite;
 }
+table th{
+    color: white;
+    background-color: red;
+}
 table, tr, th, td{
     border: 1px solid black;
     border-collapse: collapse;
@@ -104,6 +113,7 @@ table tr th, td{
     padding: 0.5em 2em;
 }
 table button{
+    height: 3em;
     padding: 5px 10px;
     margin: 1px;
     width: 100%;
@@ -118,10 +128,10 @@ table button{
     background-color: black;
 }
 .remove{
-    color: white;
-    background-color: red;
+    color: black;
+    background-color: rgb(255, 125, 125);
 }
 .remove:hover{
-    color: red;
-    background-color: white;
+    color: white;
+    background-color: rgb(255, 0, 0);
 }

@@ -30,7 +30,7 @@ function validation() {
 	let date = document.getElementById('production_date').value
 	let select = document.getElementById('type').value
 	let discount = document.getElementsByName('discount')
-	let table = [name, brand, price, date, select, getpromo(discount),`<button id="remove${cont}" onclick='remove(this);' class="remove">remove</button><button onclick='edit(this);' id="add${cont}" class="add">add</button>` ]
+	let table = [name, brand, price, date, select, getpromo(discount),`<button id="remove${cont}" onclick='remove(this);' class="remove">Remove</button><button onclick='edit(this);' id="add${cont}" class="add">Edite</button>` ]
 	// validation
 	checkName(name)
 	checkbrand(brand)
@@ -141,8 +141,8 @@ function remove(that) {
 function edit(that) {
 	let save = document.getElementById('save')
 	let button = document.getElementById('button')
-	// save.style.display = 'block'
-	// button.style.display = 'none'
+	save.style.display = 'block'
+	button.style.display = 'none'
 	let data = that.closest('tr')
 	let td = data.querySelectorAll('td')
 	let table = []
@@ -172,8 +172,8 @@ function edit(that) {
 				td[5].innerHTML = discount[i].value
 			}
 		}
-		// save.style.display = 'none'
-		// button.style.display = 'block'
+		save.style.display = 'none'
+		button.style.display = 'block'
 		resetform()
 	}
 }
