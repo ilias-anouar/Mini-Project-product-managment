@@ -81,7 +81,7 @@ form fieldset{
     margin-bottom: 1em;
 }
 #save{
-    display: none;
+    /* display: none; */
     background-color: red;
 }
 /* ========section====== */

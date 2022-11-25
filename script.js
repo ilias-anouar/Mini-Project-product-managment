@@ -141,8 +141,8 @@ function remove(that) {
 function edit(that) {
 	let save = document.getElementById('save')
 	let button = document.getElementById('button')
-	save.style.display = 'block'
-	button.style.display = 'none'
+	// save.style.display = 'block'
+	// button.style.display = 'none'
 	let data = that.closest('tr')
 	let td = data.querySelectorAll('td')
 	let table = []
@@ -150,6 +150,7 @@ function edit(that) {
 	td.forEach(e => table.push(e.innerHTML))
 	let input =  document.querySelectorAll('form input,select')
 	input.forEach(e=> inputtable.push(e))
+	console.log(input)
 	for (let i = 0; i < table.length-1; i++) {
 		inputtable[i].value = table[i]
 	}
@@ -168,10 +169,11 @@ function edit(that) {
 		let discount =  document.getElementsByName('discount')
 		for (let i = 0; i < discount.length; i++) {
 			if (discount[i].checked = true) {
-				console.log(discount[i].value);
 				td[5].innerHTML = discount[i].value
 			}
 		}
+		// save.style.display = 'none'
+		// button.style.display = 'block'
 		resetform()
 	}
 }
