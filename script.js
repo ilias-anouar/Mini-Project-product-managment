@@ -38,21 +38,18 @@ function validation() {
 	// condition
 	if (e = true) {
 		if (checkName(name)) {
-			document.getElementById('name').style.borderColor = "green"
 			document.getElementById('invname').classList.remove('erore')
 		} else {
 			document.getElementById('name').style.borderColor = "red"
 			document.getElementById('invname').classList.add('erore')
 		}
 		if (checkbrand(brand)) {
-			document.getElementById('brand').style.borderColor = "green"
 			document.getElementById('invbrand').classList.remove('erore')
 		} else {
 			document.getElementById('brand').style.borderColor = "red"
 			document.getElementById('invbrand').classList.add('erore')
 		}
 		if (checkprice(price)) {
-			document.getElementById('price').style.borderColor = "green"
 			document.getElementById('invprice').classList.remove('erore')
 
 		} else {
@@ -63,7 +60,6 @@ function validation() {
 			document.getElementById('production_date').style.borderColor = "red"
 			document.getElementById('invdate').classList.add('erore')
 		} else {
-			document.getElementById('production_date').style.borderColor = "green"
 			document.getElementById('invdate').classList.remove('erore')
 		}
 		if ((discount[0].checked == false) && (discount[1].checked == false)) {
@@ -71,14 +67,12 @@ function validation() {
 			document.getElementById('discount').style.color = 'red'
 		} else if ((discount[0].checked == true) || (discount[1].checked == false)) {
 			document.getElementById('invdis').classList.remove("erore")
-			document.getElementById('discount').style.color = 'green'
 		}
 		if (select == "") {
 			document.getElementById('invselc').classList.add("erore")
 			document.getElementById('type').style.color = 'red'
 		} else {
 			document.getElementById('invselc').classList.remove("erore")
-			document.getElementById('type').style.color = 'green'
 		}
 	} return table
 }
