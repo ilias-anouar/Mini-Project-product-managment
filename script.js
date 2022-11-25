@@ -178,12 +178,9 @@ upd.onclick = function(){
 	let inputtbl = []
 	table.forEach(e=>inputtbl.push(e))
 	console.log(inputtbl)
-	td[0].innerHTML = inputtbl[0]
-	td[1].innerHTML = inputtbl[1]
-	td[2].innerHTML = inputtbl[2]
-	td[3].innerHTML = inputtbl[3]
-	td[4].innerHTML = inputtbl[4]
-	td[5].innerHTML = inputtbl[5]
+	for (let i = 0; i < table.length; i++) {
+		td[i].innerHTML=table[i]	
+	}
 
 
 
