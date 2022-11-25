@@ -18,7 +18,6 @@ function getpromo(listpromo) {
 	for (let i = 0; i < listpromo.length; i++) {
 		if (listpromo[i].checked) {
 			return listpromo[i].value;
-			break;
 		}
 	}
 }
