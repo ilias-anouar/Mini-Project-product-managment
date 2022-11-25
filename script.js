@@ -151,7 +151,7 @@ function edit(that) {
 	let input =  document.querySelectorAll('form input,select')
 	input.forEach(e=> inputtable.push(e))
 	console.log(input)
-	for (let i = 0; i < table.length-1; i++) {
+	for (let i = 0; i < table.length-2; i++) {
 		inputtable[i].value = table[i]
 	}
 	if (table[5] === "yes") {
