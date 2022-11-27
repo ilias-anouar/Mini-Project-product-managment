@@ -166,16 +166,12 @@ function edit(that) {
 		document.getElementById('no').checked = true
 	}
 	save.onclick = function(){
-		let inputdata = document.querySelectorAll('form input,select')
-		let inputtbl = []
-		inputdata.forEach(e=>inputtbl.push(e.value))
-		for (let i = 0; i < inputtbl.length-1; i++) {
-			td[i].innerHTML = inputtbl[i]
-		}
-		let discount =  document.getElementsByName('discount')
-		for (let i = 0; i < discount.length; i++) {
-			if (discount[i].checked = true) {
-				td[5].innerHTML = discount[i].value
+		validation()
+		checkP()
+		checktable()
+		if (checkP() === true && checktable() === true) {
+			for (let i = 0; i < validation().length-1; i++) {
+				td[i].innerHTML = validation()[i]
 			}
 		}
 		save.style.display = 'none'
