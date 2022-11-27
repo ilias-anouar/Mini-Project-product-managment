@@ -138,23 +138,26 @@ table button{
 }
 /* ======modal======= */
 #modale{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     position: absolute;
     background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 22;
+    display: none;
 }
 .container{
+    grid-column-start: 2;
+    grid-row-start: 3;
+    text-align: center;
+    margin: 0;
     background-color: white;
     padding: 2em;
     border-bottom-left-radius: 2em;
     border-top-right-radius: 2em;
-}
-.container h1{
-    text-align: center;
 }
 #allbutton button{
     height: 3em;

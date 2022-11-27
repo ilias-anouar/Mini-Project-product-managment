@@ -30,7 +30,7 @@ function validation() {
 	let date = document.getElementById('production_date').value
 	let select = document.getElementById('type').value
 	let discount = document.getElementsByName('discount')
-	let table = [name, brand, price, date, select, getpromo(discount),`<button id="remove${cont}" onclick='modale()' class="remove">Remove</button><button onclick='edit(this);' id="add${cont}" class="add">Edite</button>` ]
+	let table = [name, brand, price, date, select, getpromo(discount),`<button id="remove${cont}" onclick='remove(this)' class="remove">Remove</button><button onclick='edit(this);' id="add${cont}" class="add">Edite</button>` ]
 	// validation
 	checkName(name)
 	checkbrand(brand)
@@ -135,7 +135,13 @@ function save() {
 }
 // remove
 function remove(that) {
-	that.closest('tr').remove()
+	modale()
+	document.getElementById('delete').onclick = function(){
+		if (document.getElementById('delete').value = 'delete') {
+			that.closest('tr').remove()
+			document.getElementById('modale').style.display = "none"
+		}
+	}
 }
 // edit
 function edit(that) {
@@ -183,4 +189,5 @@ document.getElementById('cancel').onclick = function(){
 }
 function modale() {
 	document.getElementById('modale').style.display = "block"
+	document.getElementById('modale').style.display = 'grid'
 }
