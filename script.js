@@ -30,7 +30,7 @@ function validation() {
 	let date = document.getElementById('production_date').value
 	let select = document.getElementById('type').value
 	let discount = document.getElementsByName('discount')
-	let table = [name, brand, price, date, select, getpromo(discount),`<button id="remove${cont}" onclick='remove(this)' class="remove">Remove</button><button onclick='edit(this);' id="add${cont}" class="add">Edite</button>` ]
+	let table = [name, brand, price, date, select, getpromo(discount), `<button id="remove${cont}" onclick='remove(this)' class="remove">Remove</button><button onclick='edit(this);' id="add${cont}" class="add">Edite</button>`]
 	// validation
 	checkName(name)
 	checkbrand(brand)
@@ -40,37 +40,30 @@ function validation() {
 		if (checkName(name)) {
 			document.getElementById('invname').classList.remove('erore')
 		} else {
-			document.getElementById('name').style.borderColor = "red"
 			document.getElementById('invname').classList.add('erore')
 		}
 		if (checkbrand(brand)) {
 			document.getElementById('invbrand').classList.remove('erore')
 		} else {
-			document.getElementById('brand').style.borderColor = "red"
 			document.getElementById('invbrand').classList.add('erore')
 		}
 		if (checkprice(price)) {
 			document.getElementById('invprice').classList.remove('erore')
-
 		} else {
-			document.getElementById('price').style.borderColor = "red"
 			document.getElementById('invprice').classList.add('erore')
 		}
 		if (date == "") {
-			document.getElementById('production_date').style.borderColor = "red"
 			document.getElementById('invdate').classList.add('erore')
 		} else {
 			document.getElementById('invdate').classList.remove('erore')
 		}
 		if ((discount[0].checked == false) && (discount[1].checked == false)) {
 			document.getElementById('invdis').classList.add("erore")
-			document.getElementById('discount').style.color = 'red'
 		} else if ((discount[0].checked == true) || (discount[1].checked == false)) {
 			document.getElementById('invdis').classList.remove("erore")
 		}
 		if (select == "") {
 			document.getElementById('invselc').classList.add("erore")
-			document.getElementById('type').style.color = 'red'
 		} else {
 			document.getElementById('invselc').classList.remove("erore")
 		}
@@ -113,14 +106,20 @@ document.getElementById('button').onclick = function () {
 }
 function resetform() {
 	let name = document.getElementById('name').value = ""
-    let brand = document.getElementById('brand').value = ""
-    let price = document.getElementById('price').value = ""
-    let date = document.getElementById('production_date').value = ""
+	let brand = document.getElementById('brand').value = ""
+	let price = document.getElementById('price').value = ""
+	let date = document.getElementById('production_date').value = ""
 	let select = document.getElementById('type').value = ""
 	let discount = document.getElementsByName('discount')
 	for (let i = 0; i < discount.length; i++) {
-		discount[i].checked = false		
+		discount[i].checked = false
 	}
+	name.style.color = 'black'
+	brand.style.color = 'black'
+	price.style.color = 'black'
+	date.style.color = 'black'
+	select.style.color = 'black'
+	discount.style.color = 'black'
 }
 function save() {
 	let tr = document.createElement('tr')
@@ -136,7 +135,7 @@ function save() {
 // remove
 function remove(that) {
 	modale()
-	document.getElementById('delete').onclick = function(){
+	document.getElementById('delete').onclick = function () {
 		if (document.getElementById('delete').value = 'delete') {
 			that.closest('tr').remove()
 			document.getElementById('modale').style.display = "none"
@@ -152,25 +151,25 @@ function edit(that) {
 	let data = that.closest('tr')
 	let td = data.querySelectorAll('td')
 	let table = []
-	let inputtable =[] 
+	let inputtable = []
 	td.forEach(e => table.push(e.innerHTML))
-	let input =  document.querySelectorAll('form input,select')
-	input.forEach(e=> inputtable.push(e))
+	let input = document.querySelectorAll('form input,select')
+	input.forEach(e => inputtable.push(e))
 	console.log(input)
-	for (let i = 0; i < table.length-2; i++) {
+	for (let i = 0; i < table.length - 2; i++) {
 		inputtable[i].value = table[i]
 	}
 	if (table[5] === "yes") {
 		document.getElementById('yes').checked = true
-	}else if(table[5] === "no"){
+	} else if (table[5] === "no") {
 		document.getElementById('no').checked = true
 	}
-	save.onclick = function(){
+	save.onclick = function () {
 		validation()
 		checkP()
 		checktable()
 		if (checkP() === true && checktable() === true) {
-			for (let i = 0; i < validation().length-1; i++) {
+			for (let i = 0; i < validation().length - 1; i++) {
 				td[i].innerHTML = validation()[i]
 			}
 		}
@@ -180,7 +179,7 @@ function edit(that) {
 	}
 }
 // modale
-document.getElementById('cancel').onclick = function(){
+document.getElementById('cancel').onclick = function () {
 	document.getElementById('modale').style.display = "none"
 }
 function modale() {
