@@ -178,3 +178,22 @@ table button{
     color: white;
     background-color: red;
 }
+/* ========responsive======== */
+@media only screen and (max-width: 768px) {
+    body{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,1fr);
+        grid-template-areas: "form" "section";
+    }
+    form{
+        grid-area: form;
+    }
+    section{
+        grid-area: section;
+    }
+    #modale{
+        width: 231%;
+        height: 100%;
+    }
+}
