@@ -114,12 +114,6 @@ function resetform() {
 	for (let i = 0; i < discount.length; i++) {
 		discount[i].checked = false
 	}
-	name.style.color = 'black'
-	brand.style.color = 'black'
-	price.style.color = 'black'
-	date.style.color = 'black'
-	select.style.color = 'black'
-	discount.style.color = 'black'
 }
 function save() {
 	let tr = document.createElement('tr')
