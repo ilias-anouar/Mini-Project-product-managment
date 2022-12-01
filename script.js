@@ -27,7 +27,7 @@ function validation() {
 	let name = document.getElementById('name').value
 	let brand = document.getElementById('brand').value
 	let price = document.getElementById('price').value
-	let date = document.getElementById('production_date').value
+	let date = document.getElementById('production-date').value
 	let select = document.getElementById('type').value
 	let discount = document.getElementsByName('discount')
 	let table = [name, brand, price, date, select, getpromo(discount), `<button id="remove${cont}" onclick='remove(this)' class="remove">Remove</button><button onclick='edit(this);' id="add${cont}" class="add">Edite</button>`]
