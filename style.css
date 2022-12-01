@@ -10,12 +10,15 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
-    grid-template-areas: "form section section section";
+    grid-template-areas: "form form section section";
+    background-image: url(/pngtree-cosmetic-pink-background-simple-literary-picture-image_914316.jpg);
+    background-size: cover;
 }
 /* =====erore========= */
 .erore{
     display: block;
     color: red;
+
 }
 /* ========form======== */
 form{
@@ -23,6 +26,9 @@ form{
     padding: 2em;
     grid-area: form;
     font-size: large;
+    background: rgba(255, 255, 255, 0.544);
+     
+
 }
 form p{
     display: none;
@@ -67,11 +73,11 @@ form button{
     margin: 1em 0 0 0;
     border: none;
     color:white;
-    background-color: darkturquoise;
+    background-color: rgb(129, 164, 71);
 }
 form button:hover{
-    background-color: turquoise;
-    color: black;
+    background-color: rgb(129, 164, 71);
+    color:pink;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -103,11 +109,13 @@ table{
     background-color: antiquewhite;
 }
 table th{
-    color: white;
-    background-color: red;
+  
+    background-color: pink;
+    color: rgb(223, 14, 156);
+   
 }
 table, tr, th, td{
-    border: 1px solid black;
+    border: 1px solid  rgb(223, 14, 156) ; 
     border-collapse: collapse;
 }
 table tr th, td{
@@ -196,4 +204,9 @@ table button{
         width: 231%;
         height: 100%;
     }
+}
+
+span h2{
+    color: rgb(129, 164, 71) ;
+    padding-left: 42%;
 }
